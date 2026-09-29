@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbedos Barbearia | Barbearia em Porto Alegre</title>
+<meta name="description" content="Barbedos Barbearia: Barbearia em Porto Alegre. Corte, barba e atendimento caprichado em Porto Alegre. Marque seu horário pelo WhatsApp.">
+<style>
+:root{--cor:#8a5a2b;--tinta:#1d1d1f;--suave:#5f6368;--fundo:#fafaf7;--card:#fff;--borda:#e8e6e1;--r:18px}
+*{box-sizing:border-box;margin:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--tinta);background:var(--fundo);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:inherit}
+.box{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.1;letter-spacing:-.02em}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2;margin-bottom:28px;letter-spacing:-.01em}
+.olho{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:var(--cor);margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--cor);color:#fff;text-decoration:none;font-weight:700;padding:16px 28px;border-radius:999px;font-size:1.05rem;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -8px var(--cor)}
+.btn svg{width:22px;height:22px;fill:currentColor}
+/* topo */
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--fundo) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--borda)}
+header .box{display:flex;justify-content:space-between;align-items:center;height:64px}
+.marca{font-weight:800;font-size:1.1rem;text-decoration:none}
+header nav a{margin-left:22px;text-decoration:none;color:var(--suave);font-size:.95rem}
+header nav a:hover{color:var(--tinta)}
+/* hero */
+.hero{padding:88px 0 72px;background:radial-gradient(circle at 85% 10%,color-mix(in srgb,var(--cor) 16%,transparent),transparent 55%)}
+.hero p.sub{font-size:1.2rem;color:var(--suave);max-width:560px;margin:18px 0 30px}
+.selo{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--borda);padding:8px 14px;border-radius:999px;font-size:.92rem;margin-bottom:22px}
+.selo b{color:#f5a623}
+/* serviços */
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.servico{background:var(--card);border:1px solid var(--borda);border-radius:var(--r);padding:26px}
+.servico h3{font-size:1.1rem;margin-bottom:6px}
+.servico p{color:var(--suave);font-size:.96rem}
+.servico::before{content:"";display:block;width:36px;height:4px;border-radius:4px;background:var(--cor);margin-bottom:16px}
+/* fotos */
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.fotos img{aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);width:100%}
+/* avaliações */
+.avaliacoes{background:var(--card);border-block:1px solid var(--borda)}
+.depo{border:1px solid var(--borda);border-radius:var(--r);padding:24px;background:var(--fundo)}
+.depo .estrelas{color:#f5a623;letter-spacing:2px;margin-bottom:10px}
+.depo p{font-size:1rem}
+.depo cite{display:block;margin-top:14px;font-style:normal;font-weight:700;font-size:.92rem;color:var(--suave)}
+/* onde */
+.onde{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;align-items:start}
+.onde dl dt{font-weight:700;margin-top:18px}
+.onde dl dd{color:var(--suave);margin:2px 0 0}
+.onde iframe{width:100%;height:340px;border:0;border-radius:var(--r)}
+/* cta final */
+.final{text-align:center;background:var(--cor);color:#fff;border-radius:28px;padding:56px 24px;margin:0 20px}
+.final h2{margin-bottom:12px}
+.final p{opacity:.9;margin-bottom:26px}
+.final .btn{background:#fff;color:var(--cor)}
+footer{padding:40px 0;text-align:center;color:var(--suave);font-size:.88rem}
+/* botão fixo */
+.zap{position:fixed;right:18px;bottom:76px;z-index:9;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.zap svg{width:32px;height:32px;fill:#fff}
+@media (max-width:760px){
+  header nav{display:none}
+  section{padding:56px 0}
+  .hero{padding:56px 0 48px}
+  .onde{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="box">
+    <a class="marca" href="#">Barbedos Barbearia</a>
+    <nav><a href="#servicos">Serviços</a><a href="#avaliacoes">Avaliações</a><a href="#onde">Onde estamos</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="box">
+    <span class="selo"><b>★ 4,9</b> · 97 avaliações no Google</span>
+    <p class="olho">Barbearia em Porto Alegre</p>
+    <h1>Barbedos Barbearia</h1>
+    <p class="sub">Corte, barba e atendimento caprichado em Porto Alegre. Marque seu horário pelo WhatsApp.</p>
+    <a class="btn" href="https://wa.me/5551996535266?text=Ol%C3%A1!%20Vim%20pelo%20site" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="box">
+    <p class="olho">O que fazemos</p>
+    <h2>Serviços</h2>
+    <div class="grade">
+      <div class="servico"><h3>Corte</h3><p>Clássico, degradê ou social, do jeito que combina com você.</p></div>
+      <div class="servico"><h3>Barba</h3><p>Toalha quente, navalha e acabamento caprichado.</p></div>
+      <div class="servico"><h3>Corte + barba</h3><p>O combo completo para sair renovado.</p></div>
+      <div class="servico"><h3>Sobrancelha</h3><p>O detalhe que fecha o visual.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="box">
+    <div class="fotos">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnPkiXIl8JWDWL2X-N7605nqDfM7uOd9a01tLj-CLmNHC3Oa591HL-4OlmqtD31mym6pyh0hEkJaWPdbG2dT3GYc858vEjJvu_-oqtx9meTFoL5phGwi8-XvDp_OfwaH4s34Fjn=w1920-h1080-k-no" alt="Foto de Barbedos Barbearia" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkyKlpimjpzxpKnnDYr1dZCS0tpnEWZC9J60sQR5n_seA3fCO1DR_vdSdjVhnI7hC6K4eOQgmIc5xWfpoigm3lIXKi5fVen6NnvJBNx16Jrxaz-3AKC9kQXs6LaLSTucUvMO-iQyyw5RG9e=w1920-h1080-k-no" alt="Foto de Barbedos Barbearia" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl1vHOt5hK_XG7SwWJO1NfJjTstpJPLfB6EyeTDGFZLJpnjIL2rDLfvvChxD14Nk3DgQswgV81dfALiQTA8Row-xQ4iQugE-A48dLYO416n2JhbA8VyEKLlnhMK_2h7Fz1C7zQ=w1920-h1080-k-no" alt="Foto de Barbedos Barbearia" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="avaliacoes" id="avaliacoes">
+  <div class="box">
+    <p class="olho">★ 4,9 no Google</p>
+    <h2>Quem já veio recomenda</h2>
+    <div class="grade">
+      <div class="depo"><div class="estrelas">★★★★★</div><p>“Atendimento maravilhoso, meu filho tem 3 anos e sempre chorava para cortar o cabelo, hoje levei ele nessa barbearia pela primeira vez, e foi incrível, não chorou nada, o barbeiro Jessé foi muito atencioso e tem muito jeito com as crianças...”</p><cite>Brunna Jorge</cite></div>
+      <div class="depo"><div class="estrelas">★★★★★</div><p>“Lugar limpo e aconchegante. Corte de cabelo com Jeferson. Profissional. Recomendo levar crianças. O meu filho corta o cabelo desde bebê com ele.”</p><cite>Flávio André Agnes</cite></div>
+      <div class="depo"><div class="estrelas">★★★★★</div><p>“Marquei em cima da hora antes do dias das mães, todos lugares não tinham horário disponível. Conseguiram me marcar as 17:30, tive que esperar uns minutos pra ser atendido, mas nada demais visto que eu marquei em cima. O profissional Jessé...”</p><cite>Alexandre Capra</cite></div>
+    </div>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="box onde">
+    <div>
+      <p class="olho">Visite a gente</p>
+      <h2>Onde estamos</h2>
+      <dl>
+        <dt>Endereço</dt><dd>Shopping dos Arcos - R. Dr. Armando Barbedo, 325 - Lj 04 - Tristeza, Porto Alegre - RS, 91920-520, Brasil</dd>
+        <dt>Horário</dt><dd>Ter a Sex 09:00–19:00 · Sáb 08:30–18:00 · Seg 09:00–19:00</dd>
+      </dl>
+    </div>
+    <iframe src="https://www.google.com/maps?q=Shopping%20dos%20Arcos%20-%20R.%20Dr.%20Armando%20Barbedo%2C%20325%20-%20Lj%2004%20-%20Tristeza%2C%20Porto%20Alegre%20-%20RS%2C%2091920-520%2C%20Brasil&output=embed" loading="lazy" title="Mapa de Barbedos Barbearia" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<div class="final">
+  <h2>Vamos conversar?</h2>
+  <p>Tire suas dúvidas ou agende direto pelo WhatsApp.</p>
+  <a class="btn" href="https://wa.me/5551996535266?text=Ol%C3%A1!%20Vim%20pelo%20site" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+</div>
+
+<footer>© Barbedos Barbearia · Porto Alegre</footer>
+
+<a class="zap" href="https://wa.me/5551996535266?text=Ol%C3%A1!%20Vim%20pelo%20site" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+</a>
+
+</body>
+</html>
