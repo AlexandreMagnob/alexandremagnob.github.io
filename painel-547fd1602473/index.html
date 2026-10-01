@@ -2,7 +2,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Envios do dia</title>
 <style>
 body{font-family:system-ui,sans-serif;margin:0;padding:16px;background:#f4f4f1;color:#1d1d1f}
-h1{font-size:1.3rem;margin:4px 0 16px} h1.sec{margin-top:32px}
+.abas{position:sticky;top:0;z-index:2;display:flex;gap:6px;background:#f4f4f1;padding:8px 0 12px;margin-top:-8px}
+.abas button{flex:1;border:0;border-radius:12px;padding:12px 6px;font:700 .9rem system-ui,sans-serif;background:#e2e2dc;color:#1d1d1f}
+.abas button.ativa{background:#1d1d1f;color:#fff}
+.abas small{display:block;font-weight:400;font-size:.78rem;opacity:.8}
+section{display:none} section.ativa{display:block}
+.vazio{text-align:center;color:#666;padding:40px 0}
 article{background:#fff;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 1px 3px #0001}
 article.feito{opacity:.45}
 h2{font-size:1.1rem;margin:0} .meta{color:#666;margin:4px 0 12px;font-size:.9rem}
@@ -12,7 +17,8 @@ a{display:block;text-align:center;text-decoration:none;font-weight:700;padding:1
 label{display:flex;gap:8px;align-items:center;font-size:.95rem;padding-top:4px}
 input{width:22px;height:22px}
 </style></head><body>
-<section><h1>Novos para enviar</h1>
+<nav class="abas"></nav>
+<section data-aba="Primeira mensagem">
 <article data-id="5571983460767" data-apartir="">
   <h2>Pituba Barbershop <span class="tag">B</span></h2><p class="meta">Salvador · ★ 4.9 · 301 avaliações</p>
   <a class="site" href="https://alexandremagnob.github.io/pituba-barbershop/" target="_blank">Ver o site</a>
@@ -535,7 +541,7 @@ input{width:22px;height:22px}
   <a class="zap" href="https://wa.me/5551985173735?text=Oi%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Alexandre.%20Vi%20a%20Nova%20Era%20Pet%20Shop%20no%20Google%2C%204%2C8%20estrelas%2C%20parab%C3%A9ns%21%20Montei%20um%20site%20de%20presente%20pra%20voc%C3%AAs.%20Posso%20te%20mandar%20o%20link%20pra%20dar%20uma%20olhada%3F">1. Mandar a pergunta</a><a class="link" href="https://wa.me/5551985173735?text=Aqui%20est%C3%A1%3A%20https%3A//alexandremagnob.github.io/nova-era-pet-shop/%0A%0ASe%20curtirem%2C%20eu%20coloco%20no%20ar%20com%20o%20endere%C3%A7o%20de%20voc%C3%AAs.%20Se%20n%C3%A3o%20curtirem%2C%20tudo%20bem%2C%20eu%20tiro%20do%20ar.">2. Respondeu? Mandar o link</a>
   <label><input type="checkbox"> Feito</label>
 </article></section>
-<section><h1 class="sec">Follow-up: quem ainda não respondeu</h1>
+<section data-aba="Follow-up">
 <article data-id="5519971723539-fup" data-apartir="2026-09-30">
   <h2>Agro Dinho <span class="tag">B</span></h2><p class="meta">Campinas · ★ 4.8 · 71 avaliações</p>
   <a class="site" href="https://alexandremagnob.github.io/agro-dinho/" target="_blank">Ver o site</a>
@@ -728,7 +734,7 @@ input{width:22px;height:22px}
   <a class="zap" href="https://wa.me/5541997975454?text=Oi%21%20Conseguiu%20dar%20uma%20olhada%20no%20site%20que%20eu%20montei%20pra%20Marumbi%20Barbearia%3F%20https%3A//alexandremagnob.github.io/marumbi-barbearia/%0A%0ASe%20quiser%20mudar%20alguma%20coisa%2C%20%C3%A9%20s%C3%B3%20me%20falar%20que%20eu%20ajusto.">Mandar o follow-up</a>
   <label><input type="checkbox"> Feito</label>
 </article></section>
-<section><h1 class="sec">Última mensagem</h1>
+<section data-aba="Última mensagem">
 <article data-id="5519971723539-final" data-apartir="2026-10-03">
   <h2>Agro Dinho <span class="tag">B</span></h2><p class="meta">Campinas · ★ 4.8 · 71 avaliações</p>
   <a class="site" href="https://alexandremagnob.github.io/agro-dinho/" target="_blank">Ver o site</a>
@@ -927,10 +933,25 @@ const hoje = new Date().toLocaleDateString('sv-SE');  // AAAA-MM-DD no fuso do c
 document.querySelectorAll('article').forEach(a => {
   if (a.dataset.apartir && a.dataset.apartir > hoje) a.remove();
 });
-document.querySelectorAll('section').forEach(s => {
+const nav = document.querySelector('.abas'), secoes = [...document.querySelectorAll('section')];
+function abrir(nome) {
+  secoes.forEach(s => s.classList.toggle('ativa', s.dataset.aba === nome));
+  nav.querySelectorAll('button').forEach(b => b.classList.toggle('ativa', b.dataset.aba === nome));
+  try { localStorage.setItem('aba', nome); } catch (e) {}
+  scrollTo(0, 0);
+}
+secoes.forEach(s => {
   const n = s.querySelectorAll('article').length;
-  if (!n) s.remove(); else s.querySelector('h1').textContent += ' (' + n + ')';
+  if (!n) s.insertAdjacentHTML('beforeend', '<p class="vazio">Nada para mandar hoje.</p>');
+  const b = document.createElement('button');
+  b.dataset.aba = s.dataset.aba;
+  b.innerHTML = s.dataset.aba + '<small>' + n + '</small>';
+  b.onclick = () => abrir(s.dataset.aba);
+  nav.appendChild(b);
 });
+let salva = null;
+try { salva = localStorage.getItem('aba'); } catch (e) {}
+abrir(secoes.some(s => s.dataset.aba === salva) ? salva : secoes[0].dataset.aba);
 document.querySelectorAll('article').forEach(a => {
   const k = 'enviado-' + a.dataset.id, c = a.querySelector('input');
   try { c.checked = localStorage.getItem(k) === '1'; } catch (e) {}
